@@ -1,12 +1,12 @@
 {
-  "name": "WTF: PWA",
-  "short_name": "WTF: PWA",
+  "name": "MIZU",
+  "short_name": "MIZU",
   "theme_color": "#2D2241",
   "background_color": "#2D2241",
   "display": "standalone",
   "orientation": "portrait",
-  "scope": "/wtf-webpack-starter/",
-  "start_url": "/wtf-webpack-starter/",
+  "scope": "/mizu/",
+  "start_url": "/mizu/",
   "icons": [
     {
       "src": "pwa/manifest-icon-192.png",
