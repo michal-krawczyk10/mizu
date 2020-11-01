@@ -1,8 +1,8 @@
 {
   "name": "MIZU",
   "short_name": "MIZU",
-  "theme_color": "#2D2241",
-  "background_color": "#2D2241",
+  "theme_color": "#3E98CB",
+  "background_color": "#3E98CB",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/mizu/",
