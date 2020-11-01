@@ -1,0 +1,24 @@
+{
+  "name": "MIZU",
+  "short_name": "MIZU",
+  "theme_color": "#2D2241",
+  "background_color": "#2D2241",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/mizu/",
+  "start_url": "/mizu/",
+  "icons": [
+    {
+      "src": "pwa/manifest-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "pwa/manifest-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}
