@@ -1,10 +1,16 @@
 @import "~normalize.css";
 
 @import "_variables";
-@import "modules/hello.scss";
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+	text-decoration: none;
+}
 
 body {
-  background: $wtf;
+  background: $main;
   color: #fff;
   display: flex;
   align-items: center;
