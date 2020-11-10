@@ -1,6 +1,6 @@
 @import "~normalize.css";
 @import "_variables";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Open+Sans:wght@600&family=Paprika&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Open+Sans:wght@600&family=Paprika&display=swap");
 
 *,
 *:before,
@@ -9,20 +9,49 @@
 	text-decoration: none;
 }
 
+html {
+	box-sizing: border-box;
+}
+
 body {
 	background: $main;
 	color: #fff;
 	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
+main {
+	width: 360px;
+	height: 640px;
+	border: 1px solid red;
+	position: relative;
+}
+
 .header {
 	font-family: $jap;
 }
 .glass {
+  display: block;
+	position: absolute;
+  top: 122px;
+	left: 74px;
 	width: 212px;
 	height: 312px;
 }
-
+.counter {
+  color: $text;
+	position: absolute;
+	margin: 0 auto;
+	left: 34px;
+	top: 104px;
+	width: 150px;
+  height: 92px;
+	font-family: $paprika;
+	font-size: 96px;
+	text-align: center;
+}
 .button {
 	display: block;
-  font-family: $os;
+	font-family: $os;
 }
