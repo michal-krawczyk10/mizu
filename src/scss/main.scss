@@ -1,6 +1,6 @@
 @import "~normalize.css";
-
 @import "_variables";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Open+Sans:wght@600&family=Paprika&display=swap');
 
 *,
 *:before,
@@ -10,20 +10,19 @@
 }
 
 body {
-  background: $main;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+	background: $main;
+	color: #fff;
+	min-height: 100vh;
 }
-
+.header {
+	font-family: $jap;
+}
 .glass {
-  display: block;
-  width: 212px;
-  height: 312px;
+	width: 212px;
+	height: 312px;
 }
 
 .button {
-  display: block;
+	display: block;
+  font-family: $os;
 }
