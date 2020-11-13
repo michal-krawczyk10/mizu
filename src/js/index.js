@@ -11,15 +11,21 @@ console.log("HELLO 🚀");
 const addButton = document.querySelector(".button__add--js");
 const removeButton = document.querySelector(".button__remove--js");
 
-const score = 0;
+let score = 0;
+
+const myResult = score;
 
 function createScore(querySelectorContent, content) {
-	const score = document.querySelector(querySelectorContent);
-	score.innerHTML = content;
+	let myResult = document.querySelector(querySelectorContent);
+	myResult.innerHTML = content;
 }
 
-createScore(".counter--js", 0);
+createScore(".counter--js", score);
 
-const add = score++;
-const remove = score--;
+function add() {
+	let myResult = document.querySelector(".counter--js");
+	score++;
+	myResult.innerHTML = score;
+}
 
+addButton.addEventListener("click", add);
