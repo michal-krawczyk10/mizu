@@ -28,4 +28,12 @@ function add() {
 	myResult.innerHTML = score;
 }
 
-addButton.addEventListener("click", add);
+addButton.addEventListener('click', add);
+
+function remove() {
+	let myResult = document.querySelector(".counter--js");
+  score--;
+  myResult.innerHTML = score;
+}
+
+removeButton.addEventListener('click', remove);
