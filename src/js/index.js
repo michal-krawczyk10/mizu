@@ -23,7 +23,12 @@ createScore(".counter--js", score);
 
 function add() {
 	let myResult = document.querySelector(".counter--js");
-	score++;
+	if (score <= 20) {
+		score++;
+	} else if (score > 20) {
+		score = 'really?';
+	}
+
 	myResult.innerHTML = score;
 }
 
@@ -33,7 +38,10 @@ function remove() {
 	let myResult = document.querySelector(".counter--js");
 	if (score > 0) {
 		score--;
-	}
+	} else if (score == 'really?') {
+		score = 21;
+	};
+
 	myResult.innerHTML = score;
 }
 
