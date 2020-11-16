@@ -21,7 +21,22 @@ function createScore(querySelectorContent, content) {
 
 createScore(".counter--js", score);
 
-function add() {
+//DWA SPOSOBY ZAPISU FUNKCJI NA ON CLICK
+
+// function add() {
+// 	let myResult = document.querySelector(".counter--js");
+// 	if (score <= 20) {
+// 		score++;
+// 	} else if (score > 20) {
+// 		score = 'really?';
+// 	}
+
+// 	myResult.innerHTML = score;
+// }
+
+// addButton.addEventListener("click", add);
+
+addButton.addEventListener("click", () => {
 	let myResult = document.querySelector(".counter--js");
 	if (score <= 20) {
 		score++;
@@ -30,9 +45,9 @@ function add() {
 	}
 
 	myResult.innerHTML = score;
-}
+});
 
-addButton.addEventListener("click", add);
+
 
 function remove() {
 	let myResult = document.querySelector(".counter--js");
