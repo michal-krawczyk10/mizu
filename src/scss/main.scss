@@ -90,8 +90,9 @@ main {
 }
 
 .button {
-	border: 1px $text solid;
+	border: none;
 	border-radius: 4px;
+	box-shadow: 0px 4px 4px $text;
 	color: $text;
 	background: $strike;
 	display: block;

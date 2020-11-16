@@ -6,13 +6,16 @@ registerSW();
 
 /* place your code below */
 
+
+//BUTTONY
+
+
 console.log("HELLO 🚀");
 
 const addButton = document.querySelector(".button__add--js");
 const removeButton = document.querySelector(".button__remove--js");
 
 let score = 0;
-let myResult = score;
 
 function createScore(querySelectorContent, content) {
 	let myResult = document.querySelector(querySelectorContent);
@@ -21,7 +24,7 @@ function createScore(querySelectorContent, content) {
 
 createScore(".counter--js", score);
 
-//DWA SPOSOBY ZAPISU FUNKCJI NA ON CLICK
+//DWA ALTERNATYWNE SPOSOBY ZAPISU FUNKCJI NA ON CLICK
 
 // function add() {
 // 	let myResult = document.querySelector(".counter--js");
@@ -41,23 +44,24 @@ addButton.addEventListener("click", () => {
 	if (score <= 20) {
 		score++;
 	} else if (score > 20) {
-		score = 'really?';
+		score = "really?";
 	}
 
 	myResult.innerHTML = score;
 });
 
-
-
 function remove() {
 	let myResult = document.querySelector(".counter--js");
 	if (score > 0) {
 		score--;
-	} else if (score == 'really?') {
+	} else if (score == "really?") {
 		score = 21;
-	};
+	}
 
 	myResult.innerHTML = score;
 }
 
 removeButton.addEventListener("click", remove);
+
+// local storage
+
