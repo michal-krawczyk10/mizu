@@ -17,8 +17,8 @@ const removeButton = document.querySelector(".button__remove--js");
 let score = 0;
 
 function createScore(querySelectorContent, content) {
-	let myResult = document.querySelector(querySelectorContent);
-	myResult.innerHTML = content;
+	let counter = document.querySelector(querySelectorContent);
+	counter.innerHTML = content;
 }
 
 createScore(".counter--js", score);
