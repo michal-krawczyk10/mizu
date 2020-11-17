@@ -40,16 +40,16 @@ main {
 }
 .menu {
 	position: absolute;
-	right: 32px;
+	right: 42px;
 	top: 32px;
-	width: 60px;
-	height: 50px;
+	width: 30px;
+	height: 30px;
 	margin: 0;
 	padding: 0;
 }
 .line {
 	display: block;
-	border: solid 5px;
+	border: solid 2px;
 	margin: 0;
 	&--bright {
 		border-color: $strike;

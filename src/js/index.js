@@ -12,7 +12,6 @@ const removeButton = document.querySelector(".button__remove--js");
 
 let score = 0;
 
-
 // KLUCZ Z DZISIEJSZĄ DATĄ WG. CZASU UTC
 // const key = new Date().toISOString().slice(0, 10);
 
@@ -20,34 +19,25 @@ let score = 0;
 const key = new Date().toLocaleString().slice(0, 10);
 
 // LOCAL STORAGE
-const localStorageValue = localStorage.getItem(key); //zmienna przypisana do klucza
+const localStorageValue = localStorage.getItem(key); //zmienna przypięta do klucza
 
-if (localStorageValue) { //sprawszamy czy jest coś pod tym kluczem w localstorage, jeśli jest to:
-	score = localStorageValue //przypisujemy jego wartość do zmiennej score
-} else { //jeśli nie
-	localStorage.setItem(key, 0); //pod klucz wstawiamy zero 
+if (localStorageValue) {
+	//sprawszamy czy jest coś pod tym kluczem w localstorage, jeśli jest to:
+	score = localStorageValue; //przypisujemy jego wartość do zmiennej score
+} else {
+	//jeśli nie
+	localStorage.setItem(key, 0); //pod wartość klucza wstawiamy zero
 }
 
-//USTAWIENIE WYŚWIETLANIA SCORE W ELEMENCIE (ALT. DLA WPISANIA WPROST W HTML)
-function createScore(content) {
-	counter.innerHTML = content;
-}
+counter.innerHTML = score; //wstawia do html wartość przypisaną do klucza
 
-createScore(score);
-
-//DWA ALTERNATYWNE SPOSOBY ZAPISU FUNKCJI NA ON CLICK
-
-// function add() {
-// 	if (score <= 20) {
-// 		score++;
-// 	} else if (score > 20) {
-// 		score = 'really?';
-// 	}
-
-// 	counter.innerHTML = score;
+// //USTAWIENIE WYŚWIETLANIA SCORE W ELEMENCIE (ALT. DLA WPISANIA WPROST W HTML)
+// function createScore(content) {
+// 	counter.innerHTML = content;
 // }
+// createScore(score);
 
-// addButton.addEventListener("click", add);
+// DWA ALTERNATYWNE SPOSOBY ZAPISU FUNKCJI NA CLICK
 
 addButton.addEventListener("click", () => {
 	if (score <= 20) {
@@ -57,6 +47,8 @@ addButton.addEventListener("click", () => {
 	}
 
 	counter.innerHTML = score;
+
+	localStorage.setItem(key, score); //po kliknięciu wstawia wynik pod klucz
 });
 
 function remove() {
@@ -67,8 +59,8 @@ function remove() {
 	}
 
 	counter.innerHTML = score;
+
+	localStorage.setItem(key, score);
 }
 
-removeButton.addEventListener("click", remove);
-
-// local storage
+removeButton.addEventListener("click", remove); // TAK CLICK ODPALA FUNKCJE ZDEFINIOWANĄ WCZEŚNIEJ
