@@ -38,7 +38,7 @@ main {
 	margin: 0;
 	padding: 0;
 }
-.menu {
+.hamburger {
 	position: absolute;
 	right: 42px;
 	top: 32px;
@@ -58,6 +58,21 @@ main {
 	&--blank {
 		border-color: $main;
 	}
+}
+
+.menu {
+	position: fixed;
+	top: 0;
+	right: 0;
+	display: flex;
+	flex-flow: column nowrap;
+	background: $strike;
+	box-shadow: -4px 4px 4px $text;
+	visibility: hidden;
+}
+
+.show {
+	visibility: visible;
 }
 
 .glass {
