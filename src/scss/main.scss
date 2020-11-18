@@ -82,7 +82,12 @@ main {
 	left: 74px;
 	width: 212px;
 	height: 312px;
+	transition: transform 1.5s;
+	&--animation {
+		transform: rotatey(360deg);
+	}
 }
+
 .counter {
 	color: $text;
 	position: absolute;
@@ -114,4 +119,8 @@ main {
 	font-family: $os;
 	padding: 8px 16px;
 	margin: 20px auto;
+	transition: all 0.5s;
+	&:hover {
+		background-color: $strike2;
+	}
 }

@@ -72,3 +72,15 @@ const menu = document.querySelector(".menu");
 hamburger.addEventListener("click", () => {
 	menu.classList.toggle("show");
 });
+
+//add class to tag
+
+const rotate = document.querySelector('.glass');
+
+addButton.addEventListener('click', () => {
+	rotate.classList.toggle('glass--animation');
+});
+
+removeButton.addEventListener('click', () => {
+	rotate.classList.toggle('glass--animation');
+});
