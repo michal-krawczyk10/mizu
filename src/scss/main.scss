@@ -7,6 +7,7 @@
 *:after {
 	box-sizing: inherit;
 	text-decoration: none;
+	list-style-type: none;
 }
 
 html {
@@ -69,6 +70,15 @@ main {
 	background: $strike;
 	box-shadow: -4px 4px 4px $text;
 	visibility: hidden;
+padding: 0;
+	&__button {
+		color: $text;
+		padding: 8px;
+
+		&:hover {
+			background: $strike2;
+		}
+	}
 }
 
 .show {
