@@ -12,8 +12,8 @@ const removeButton = document.querySelector(".button__remove--js");
 
 let score = 0;
 
-// KLUCZ Z DZISIEJSZĄ DATĄ WG. CZASU UTC
-// const key = new Date().toISOString().slice(0, 10);
+/* KLUCZ Z DZISIEJSZĄ DATĄ WG. CZASU UTC:
+const key = new Date().toISOString().slice(0, 10); */
 
 // KLUCZ Z DATĄ wg czasu lokalnego
 const key = new Date().toLocaleString().slice(0, 10);
@@ -103,7 +103,30 @@ function createContent(querySelectorContent, content) {
 	item.innerHTML = content;
 }
 
+//cdn	
+
+// ustalanie języka z local storage (html jest po angielsku)
+
+let language = localStorage.getItem("language");
+
 let polish = false;
+
+if (language === "polish") {
+	polish = true;
+	createContent(".button__add--js", "+ dodaj szklankę");
+	createContent(".button__remove--js", "- usuń szklankę");
+	createContent(".language--js", "english");
+	createContent(".history--js", "historia");
+	if (isDark) {
+		createContent(".dark--js", "tryb jasny");
+	} else {
+		createContent(".dark--js", "tryb ciemny");
+	}
+} else {
+	polish = false;
+}
+
+// dark mode cd
 
 dark.addEventListener("click", () => {
 	if (isDark == false) {
@@ -129,11 +152,11 @@ dark.addEventListener("click", () => {
 
 //language
 
-// let polish = false; (flaga zdefiniowana wyżej)
+// let polish = false; (flaga zdefiniowana już została wyżej, zostawiam też tu żeby o niej pamiętać)
 
-const language = document.querySelector(".language--js");
+let changeLanguage = document.querySelector(".language--js");
 
-language.addEventListener("click", () => {
+changeLanguage.addEventListener("click", () => {
 	if (polish) {
 		polish = false;
 		createContent(".button__add--js", "+ add a glass");
@@ -145,13 +168,14 @@ language.addEventListener("click", () => {
 		} else {
 			createContent(".dark--js", "dark mode");
 		}
+		localStorage.setItem("language", "english");
 	} else {
 		polish = true;
 		createContent(".button__add--js", "+ dodaj szklankę");
 		createContent(".button__remove--js", "- usuń szklankę");
 		createContent(".language--js", "english");
 		createContent(".history--js", "historia");
-
+		localStorage.setItem("language", "polish");
 		if (isDark) {
 			createContent(".dark--js", "tryb jasny");
 		} else {
