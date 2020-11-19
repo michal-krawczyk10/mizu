@@ -5,6 +5,10 @@ import { registerSW } from "./pwa.js";
 registerSW();
 
 /* place your code below */
+function createContent(querySelectorContent, content) {
+	const item = document.querySelector(querySelectorContent);
+	item.innerHTML = content;
+}
 
 const counter = document.querySelector(".counter--js");
 const addButton = document.querySelector(".button__add--js");
@@ -92,18 +96,29 @@ removeButton.addEventListener("click", () => {
 	rotate.classList.toggle("glass--animation");
 });
 
-// dark mode
+// dark mode, sprawdzanie stanu z local storage
+
+let darkMode = localStorage.getItem("darkMode");
 
 let isDark = false;
 
-const dark = document.querySelector(".dark--js");
-
-function createContent(querySelectorContent, content) {
-	const item = document.querySelector(querySelectorContent);
-	item.innerHTML = content;
+if (darkMode === 'true') {
+	isDark = true;
+	document.documentElement.style.setProperty("--back", "#062452");
+	document.documentElement.style.setProperty("--back2", "#021531");
+	if (polish) {
+		createContent(".dark--js", "tryb jasny");
+	} else {
+		createContent(".dark--js", "bright mode");
+	}
+} else {
+	isDark = false;
 }
 
-//cdn	
+const dark = document.querySelector(".dark--js");
+
+
+//cdn
 
 // ustalanie języka z local storage (html jest po angielsku)
 
@@ -126,11 +141,12 @@ if (language === "polish") {
 	polish = false;
 }
 
-// dark mode cd
+// dark mode cd, zmiana na klik i ustawianie local storage
 
 dark.addEventListener("click", () => {
 	if (isDark == false) {
 		isDark = true;
+		localStorage.setItem("darkMode", 'true');
 		document.documentElement.style.setProperty("--back", "#062452");
 		document.documentElement.style.setProperty("--back2", "#021531");
 		if (polish) {
@@ -142,6 +158,7 @@ dark.addEventListener("click", () => {
 		isDark = false;
 		document.documentElement.style.setProperty("--back", "#3E98CB");
 		document.documentElement.style.setProperty("--back2", "#0e5985");
+		localStorage.setItem("darkMode", false);
 		if (polish) {
 			createContent(".dark--js", "tryb ciemny");
 		} else {

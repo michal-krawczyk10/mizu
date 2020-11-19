@@ -16,7 +16,7 @@ html {
 
 body {
 	background: var(--back);
-	color: #F5FBFE;
+	color: #f5fbfe;
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
@@ -97,7 +97,6 @@ main {
 	@media screen and(min-width: 1024px) {
 		position: relative;
 		margin: -20px 0 0 50px;
-		
 	}
 }
 
