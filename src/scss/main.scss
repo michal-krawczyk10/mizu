@@ -15,8 +15,8 @@ html {
 }
 
 body {
-	background: $main;
-	color: #fff;
+	background: var(--back);
+	color: #F5FBFE;
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
@@ -58,7 +58,7 @@ main {
 		border-radius: 4px;
 	}
 	&--blank {
-		border-color: $main;
+		border-color: var(--back);
 	}
 }
 
@@ -153,7 +153,7 @@ main {
 
 .background {
 	position: fixed;
-	background: $main2;
+	background: var(--back2);
 	top: -100%;
 	right: -100%;
 	width: 100%;

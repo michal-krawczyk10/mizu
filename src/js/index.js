@@ -91,3 +91,28 @@ addButton.addEventListener("click", () => {
 removeButton.addEventListener("click", () => {
 	rotate.classList.toggle("glass--animation");
 });
+
+// dark mode
+
+let isDark = false;
+
+const dark = document.querySelector(".dark--js");
+
+function createContent(querySelectorContent, content) {
+	const item = document.querySelector(querySelectorContent);
+	item.innerHTML = content;
+}
+
+dark.addEventListener("click", () => {
+	if (isDark == false) {
+		isDark = true;
+		document.documentElement.style.setProperty("--back", "#062452");
+		document.documentElement.style.setProperty("--back2", "#021531");
+		createContent(".dark--js", "bright mode");
+	} else {
+		isDark = false;
+		document.documentElement.style.setProperty("--back", "#3E98CB");
+		document.documentElement.style.setProperty("--back2", "#0e5985");
+		createContent('.dark--js', "dark mode")
+	}
+});
