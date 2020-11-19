@@ -68,20 +68,26 @@ removeButton.addEventListener("click", remove); // TAK CLICK ODPALA FUNKCJE ZDEF
 //hamburger on/off
 const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector(".menu");
+const background = document.querySelector(".background");
 
 hamburger.addEventListener("click", () => {
-	menu.classList.toggle("show");
+	menu.classList.add("show");
+	background.classList.add("background--js");
+});
+
+background.addEventListener("click", () => {
+	menu.classList.remove("show");
+	background.classList.remove("background--js");
 });
 
 //add class to tag on click
 
-const rotate = document.querySelector('.glass');
+const rotate = document.querySelector(".glass");
 
-addButton.addEventListener('click', () => {
-	rotate.classList.toggle('glass--animation');
+addButton.addEventListener("click", () => {
+	rotate.classList.toggle("glass--animation");
 });
 
-removeButton.addEventListener('click', () => {
-	rotate.classList.toggle('glass--animation');
+removeButton.addEventListener("click", () => {
+	rotate.classList.toggle("glass--animation");
 });
-
