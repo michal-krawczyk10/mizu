@@ -103,16 +103,59 @@ function createContent(querySelectorContent, content) {
 	item.innerHTML = content;
 }
 
+let polish = false;
+
 dark.addEventListener("click", () => {
 	if (isDark == false) {
 		isDark = true;
 		document.documentElement.style.setProperty("--back", "#062452");
 		document.documentElement.style.setProperty("--back2", "#021531");
-		createContent(".dark--js", "bright mode");
+		if (polish) {
+			createContent(".dark--js", "tryb jasny");
+		} else {
+			createContent(".dark--js", "bright mode");
+		}
 	} else {
 		isDark = false;
 		document.documentElement.style.setProperty("--back", "#3E98CB");
 		document.documentElement.style.setProperty("--back2", "#0e5985");
-		createContent('.dark--js', "dark mode")
+		if (polish) {
+			createContent(".dark--js", "tryb ciemny");
+		} else {
+			createContent(".dark--js", "dark mode");
+		}
+	}
+});
+
+//language
+
+// let polish = false; (flaga zdefiniowana wyżej)
+
+const language = document.querySelector(".language--js");
+
+language.addEventListener("click", () => {
+	if (polish) {
+		polish = false;
+		createContent(".button__add--js", "+ add a glass");
+		createContent(".button__remove--js", "- remove a glass");
+		createContent(".language--js", "polski");
+		createContent(".history--js", "history");
+		if (isDark) {
+			createContent(".dark--js", "bright mode");
+		} else {
+			createContent(".dark--js", "dark mode");
+		}
+	} else {
+		polish = true;
+		createContent(".button__add--js", "+ dodaj szklankę");
+		createContent(".button__remove--js", "- usuń szklankę");
+		createContent(".language--js", "english");
+		createContent(".history--js", "historia");
+
+		if (isDark) {
+			createContent(".dark--js", "tryb jasny");
+		} else {
+			createContent(".dark--js", "tryb ciemny");
+		}
 	}
 });
