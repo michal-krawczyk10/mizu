@@ -112,7 +112,7 @@ let darkMode = localStorage.getItem("darkMode");
 
 let isDark = false;
 
-if (darkMode === 'true') {
+if (darkMode === "true") {
 	isDark = true;
 	document.documentElement.style.setProperty("--back", "#062452");
 	document.documentElement.style.setProperty("--back2", "#021531");
@@ -126,7 +126,6 @@ if (darkMode === 'true') {
 }
 
 const dark = document.querySelector(".dark--js");
-
 
 //cdn
 
@@ -156,7 +155,7 @@ if (language === "polish") {
 dark.addEventListener("click", () => {
 	if (isDark == false) {
 		isDark = true;
-		localStorage.setItem("darkMode", 'true');
+		localStorage.setItem("darkMode", "true");
 		document.documentElement.style.setProperty("--back", "#062452");
 		document.documentElement.style.setProperty("--back2", "#021531");
 		if (polish) {
