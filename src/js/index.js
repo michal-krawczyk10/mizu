@@ -84,16 +84,26 @@ background.addEventListener("click", () => {
 	background.classList.remove("background--js");
 });
 
+// audio
+
+const waterSound = document.querySelector(".audio--js");
+
 //add class to tag on click
 
 const rotate = document.querySelector(".glass");
 
 addButton.addEventListener("click", () => {
 	rotate.classList.toggle("glass--animation");
+	waterSound.pause(); // audio
+	waterSound.currentTime = 0; //audio
+	waterSound.play(); //audio
 });
 
 removeButton.addEventListener("click", () => {
 	rotate.classList.toggle("glass--animation");
+	waterSound.pause(); // audio
+	waterSound.currentTime = 0; //audio
+	waterSound.play(); //audio
 });
 
 // dark mode, sprawdzanie stanu z local storage
