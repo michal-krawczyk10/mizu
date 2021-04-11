@@ -138,7 +138,6 @@ if (language === "polish") {
 	createContent(".button__add--js", "+ dodaj szklankę");
 	createContent(".button__remove--js", "- usuń szklankę");
 	createContent(".language--js", "english");
-	createContent(".history--js", "historia");
 	if (isDark) {
 		createContent(".dark--js", "tryb jasny");
 	} else {
@@ -186,7 +185,6 @@ changeLanguage.addEventListener("click", () => {
 		createContent(".button__add--js", "+ add a glass");
 		createContent(".button__remove--js", "- remove a glass");
 		createContent(".language--js", "polski");
-		createContent(".history--js", "history");
 		if (isDark) {
 			createContent(".dark--js", "bright mode");
 		} else {
@@ -198,7 +196,6 @@ changeLanguage.addEventListener("click", () => {
 		createContent(".button__add--js", "+ dodaj szklankę");
 		createContent(".button__remove--js", "- usuń szklankę");
 		createContent(".language--js", "english");
-		createContent(".history--js", "historia");
 		localStorage.setItem("language", "polish");
 		if (isDark) {
 			createContent(".dark--js", "tryb jasny");
